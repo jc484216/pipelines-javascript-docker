@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imagek8s 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imagek8s
+  template:
+    metadata:
+      labels:
+        app: imagek8s 
+    spec:
+      containers:
+        - name: imagek8s 
+          image: huylng810.azurecr.io/imagek8s
+          ports:
+          - containerPort: 8080
